@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "postinstall": "yarn dlx @yarnpkg/sdks vscode",
+    "sdkupdate": "yarn dlx @yarnpkg/sdks vscode",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "typecheck": "tsc --noEmit",
