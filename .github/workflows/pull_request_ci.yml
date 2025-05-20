@@ -1,0 +1,36 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.10.0'
+
+      - name: Install Yarn
+        run: corepack enable && corepack prepare yarn@stable --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Type Check
+        run: yarn typecheck
+
+      - name: Run Tests (Vitest)
+        run: yarn test:vitest
+
+      - name: Run Lint Check
+        run: yarn lint
+
+      - name: Build
+        run: yarn build
