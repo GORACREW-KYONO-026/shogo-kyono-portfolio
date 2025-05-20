@@ -1,0 +1,26 @@
+name: Deploy to Vercel on Master Merge
+
+on:
+  push: # masterブランチへのpushのみをトリガー
+    branches:
+      - master
+
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Trigger Vercel Production Deploy
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_MASTER_PR_DEPLOY_HOOK }} # GitHub Secretsに保存したDeploy Hook URL
+        run: curl -X POST $VERCEL_DEPLOY_HOOK
