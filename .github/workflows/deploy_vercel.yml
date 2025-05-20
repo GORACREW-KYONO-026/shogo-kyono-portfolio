@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: '22.x'
 
+      - name: Install Yarn
+        run: corepack enable && corepack prepare yarn@stable --activate
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
