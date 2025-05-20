@@ -31,8 +31,8 @@ echo "Running TypeCheck..."
 yarn typecheck
 
 # Run tests
-# echo "Running tests... not command"
-# yarn test:vitest
+echo "Running tests... not command"
+yarn test:vitest
 
 # Run linter (e.g., ESLint or Biome)
 echo "Running linter..."

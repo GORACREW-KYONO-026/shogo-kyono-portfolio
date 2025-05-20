@@ -26,8 +26,8 @@ jobs:
       - name: Type Check
         run: yarn typecheck
 
-      # - name: Run Tests (Vitest)
-      #   run: yarn test:vitest
+      - name: Run Tests (Vitest)
+        run: yarn test:vitest
 
       - name: Run Lint Check
         run: yarn lint
