@@ -1,9 +1,89 @@
 {
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "biome.enabled": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "eslint.workingDirectories": [
+    "./"
+  ],
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "always",
+    "source.fixAll.eslint": "always",
+    "source.organizeImports.biome": "always"
+  },
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "path-intellisense.mappings": {
+    "@": "${workspaceFolder}/src"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "TICKET",
+    "OPTIMIZE",
+    "NOTE",
+    "DEPRECATED",
+    "CHECK",
+    "DOCS"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "icon": "flame",
+      "iconColour": "red",
+      "background": "rgba(255, 0, 0, 0.2)"
+    },
+    "OPTIMIZE": {
+      "icon": "tools",
+      "iconColour": "orange",
+      "background": "rgba(255, 165, 0, 0.2)"
+    },
+    "NOTE": {
+      "icon": "note",
+      "iconColour": "blue",
+      "background": "rgba(0, 0, 255, 0.2)"
+    },
+    "TICKET": {
+      "icon": "flame",
+      "iconColour": "purple",
+      "background": "rgba(128, 0, 128, 0.2)"
+    }
+  }
 }
