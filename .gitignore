@@ -11,3 +11,6 @@ node_modules
 
 # Vite build
 dist
+
+# coverage
+coverage/*
