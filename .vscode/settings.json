@@ -1,13 +1,17 @@
 {
+  // 基本的なエディタ設定
   "editor.tabSize": 2,
   "files.eol": "\n",
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": true, // 保存時にフォーマットを適用
   "files.autoSave": "off",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  // Biome の設定
+  "editor.defaultFormatter": "biomejs.biome", // デフォルトフォーマッターをBiomeに設定
   "biome.enabled": true,
+  // ESLint の設定
+  "eslint.nodePath": ".yarn/sdks", // Yarn PnP 環境でESLintをロードするためのパス
   "eslint.validate": [
     "javascript",
     "typescript",
@@ -16,24 +20,24 @@
   ],
   "eslint.workingDirectories": [
     "./"
-  ],
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "eslint.nodePath": ".yarn/sdks",
+  ], // ワークスペースのルートでESLintを実行
+  // TypeScript の設定 (Yarn PnP 環境向け)
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  // 保存時のアクション
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "always",
-    "source.fixAll.eslint": "always",
-    "source.organizeImports.biome": "always"
+    "source.fixAll.biome": "explicit", // Biomeの自動修正は明示的に実行 (または always)
+    "source.fixAll.eslint": "always", // ESLintの自動修正は常に実行
+    "source.organizeImports.biome": "always" // Biomeでのインポート整理を常に実行
   },
+  // インポートパスの解決
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  // パス補完 (path-intellisense)
   "path-intellisense.mappings": {
     "@": "${workspaceFolder}/src"
   },
+  // 言語ごとのフォーマッター設定 (Biomeを優先)
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -49,9 +53,16 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  // Markdown の設定
   "[markdown]": {
     "files.trimTrailingWhitespace": false
   },
+  // 検索除外
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  // todo-tree の設定 (既存から変更なし)
   "todo-tree.general.tags": [
     "TODO",
     "FIXME",
