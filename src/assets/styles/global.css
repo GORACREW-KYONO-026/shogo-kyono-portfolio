@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,8 @@
 
 /* custom fonts */
 @font-face {
-  font-family: 'Light Nove lPOP v2'; /* フォントファミリー名（任意） */
-  src: url('../fonts/LightNovelPOPv2.otf') format('opentype'); /* ファイルパスとフォーマット */
+  font-family: "Light Nove lPOP v2"; /* フォントファミリー名（任意） */
+  src: url("../fonts/LightNovelPOPv2.otf") format("opentype"); /* ファイルパスとフォーマット */
   font-weight: normal; /* フォントの太さ（あれば） */
   font-style: normal; /* フォントのスタイル（あれば） */
   font-display: swap; /* フォントの読み込み戦略（重要） */
@@ -19,13 +19,13 @@
   /* font-family: 'Noto Sans JP', sans-serif; */
 
   /* 例2: Light Nove lPOP v2 をデフォルトにしたい場合 */
-  font-family: 'Light Nove lPOP v2', sans-serif;
+  font-family: "Light Nove lPOP v2", sans-serif;
 
   color-scheme: light;
   --blog-header-logo-invert: 0;
   /* theme() 関数を削除し、直接Hexコードを指定 */
   --primary-color: #2c353b;
-  --primary-color-rgb: 44,53,59;
+  --primary-color-rgb: 44, 53, 59;
   --font-color-strong: #000;
   --color-900: #111827;
   --color-800: #1f2937;
@@ -42,12 +42,12 @@
 }
 
 /* Dark Theme */
-[data-theme='dark'] {
+[data-theme="dark"] {
   color-scheme: dark;
   --blog-header-logo-invert: 1;
   /* theme() 関数を削除し、直接Hexコードを指定 */
   --primary-color: #d4d4d4;
-  --primary-color-rgb: 163,163,163;
+  --primary-color-rgb: 163, 163, 163;
   --font-color-strong: #fafafa;
   --color-900: #f5f5f5;
   --color-800: #e5e5e5;
@@ -63,12 +63,12 @@
 }
 
 /* Sakura Theme */
-[data-theme='sakura'] {
+[data-theme="sakura"] {
   color-scheme: light;
   --blog-header-logo-invert: 0;
   /* theme() 関数を削除し、直接Hexコードを指定 */
   --primary-color: #f472b6;
-  --primary-color-rgb: 244,114,182;
+  --primary-color-rgb: 244, 114, 182;
   --font-color-strong: #500724;
   --color-900: #831843;
   --color-800: #9d174d;
@@ -152,7 +152,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-
 
 /* #root {
   max-width: 1280px;
