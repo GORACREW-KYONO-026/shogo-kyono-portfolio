@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom fonts */
+@font-face {
+  font-family: 'Light Nove lPOP v2'; /* フォントファミリー名（任意） */
+  src: url('../fonts/LightNovelPOPv2.otf') format('opentype'); /* ファイルパスとフォーマット */
+  font-weight: normal; /* フォントの太さ（あれば） */
+  font-style: normal; /* フォントのスタイル（あれば） */
+  font-display: swap; /* フォントの読み込み戦略（重要） */
+}
+
+/* Default (Light) Theme */
+:root {
+  /* 例1: Noto Sans JP をデフォルトにしたい場合 */
+  /* font-family: 'Noto Sans JP', sans-serif; */
+
+  /* 例2: Light Nove lPOP v2 をデフォルトにしたい場合 */
+  font-family: 'Light Nove lPOP v2', sans-serif;
+
+  color-scheme: light;
+  --blog-header-logo-invert: 0;
+  /* theme() 関数を削除し、直接Hexコードを指定 */
+  --primary-color: #2c353b;
+  --primary-color-rgb: 44,53,59;
+  --font-color-strong: #000;
+  --color-900: #111827;
+  --color-800: #1f2937;
+  --color-700: #374151;
+  --color-600: #4b5563;
+  --color-500: #6b7280;
+  --color-400: #9ca3af;
+  --color-300: #d8d8d8;
+  --color-200: #e5e7eb;
+  --color-100: #f3f4f6;
+  --bg-color-strong: #fff;
+  --sns-btn-color: #000;
+  --progress-bar: #00708d;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --blog-header-logo-invert: 1;
+  /* theme() 関数を削除し、直接Hexコードを指定 */
+  --primary-color: #d4d4d4;
+  --primary-color-rgb: 163,163,163;
+  --font-color-strong: #fafafa;
+  --color-900: #f5f5f5;
+  --color-800: #e5e5e5;
+  --color-700: #d4d4d4;
+  --color-600: #a3a3a3;
+  --color-500: #737373;
+  --color-400: #525252;
+  --color-300: #404040;
+  --color-200: #262626;
+  --color-100: #171717;
+  --bg-color-strong: #0a0a0a;
+  --sns-btn-color: #fff;
+}
+
+/* Sakura Theme */
+[data-theme='sakura'] {
+  color-scheme: light;
+  --blog-header-logo-invert: 0;
+  /* theme() 関数を削除し、直接Hexコードを指定 */
+  --primary-color: #f472b6;
+  --primary-color-rgb: 244,114,182;
+  --font-color-strong: #500724;
+  --color-900: #831843;
+  --color-800: #9d174d;
+  --color-700: #be185d;
+  --color-600: #db2777;
+  --color-500: #ec4899;
+  --color-400: #f472b6;
+  --color-300: #f9a8d4;
+  --color-200: #fbcfe8;
+  --color-100: #fce7f3;
+  --bg-color-strong: #fdf2f8;
+  --sns-btn-color: #2c353b;
+}
+
+/* 要調査 */
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
