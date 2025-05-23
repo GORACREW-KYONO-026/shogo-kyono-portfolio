@@ -106,7 +106,8 @@
         "noUnusedVariables": "warn",
         "noVoidElementsWithChildren": "error",
         "noVoidTypeReturn": "error",
-        "useValidForDirection": "error"
+        "useValidForDirection": "error",
+        "noUnknownFunction": "off"
       },
       "performance": {
         "noDelete": "error"
