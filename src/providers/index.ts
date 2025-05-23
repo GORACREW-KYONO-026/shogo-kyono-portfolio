@@ -1,1 +1,1 @@
-export * from './GlobalProvider_tmp';
+export * from './GlobalProvider';

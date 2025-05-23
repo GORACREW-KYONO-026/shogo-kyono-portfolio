@@ -1,11 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@/assets/styles/global.css';
+import { App } from '@/components';
 import { GlobalProvider } from '@/providers';
-import App from './App.tsx';
 
 const rootElement = document.getElementById('root');
-
 if (!rootElement) {
   throw new Error('Root element not found');
   // NOTE:NOT FOUNDページへリダイレクトさせる

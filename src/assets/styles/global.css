@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@radix-ui/themes/styles.css";
+@import "tailwindcss";
 
 /* custom fonts */
 @font-face {
@@ -21,177 +19,226 @@
   /* 例2: Light Nove lPOP v2 をデフォルトにしたい場合 */
   font-family: "Light Nove lPOP v2", sans-serif;
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   color-scheme: light;
   --blog-header-logo-invert: 0;
-  /* theme() 関数を削除し、直接Hexコードを指定 */
-  --primary-color: #2c353b;
-  --primary-color-rgb: 44, 53, 59;
-  --font-color-strong: #000;
+
+  --color-primary-color: #2C353B;
+  --color-primary-color-rgb: 44, 53, 59; /* RGB値は必要に応じて維持 */
+  --color-font-color-strong: #000;
+  --color-bg-color-strong: #FFF;
+  --color-sns-btn-color: #000;
+  --color-tint-strong: #F0F0F0;
+
+  --color-sakura-petal:  #FFC0CB;
+
   --color-900: #111827;
-  --color-800: #1f2937;
+  --color-800: #1F2937;
   --color-700: #374151;
-  --color-600: #4b5563;
-  --color-500: #6b7280;
-  --color-400: #9ca3af;
-  --color-300: #d8d8d8;
-  --color-200: #e5e7eb;
-  --color-100: #f3f4f6;
-  --bg-color-strong: #fff;
-  --sns-btn-color: #000;
-  --progress-bar: #00708d;
+  --color-600: #4B5563;
+  --color-500: #6B7280;
+  --color-400: #9CA3AF;
+  --color-300: #D8D8D8;
+  --color-200: #E5E7EB;
+  --color-100: #F3F4F6;
 }
 
 /* Dark Theme */
-[data-theme="dark"] {
-  color-scheme: dark;
+:root:has(#theme-selector [value=dark]:checked) {
+ color-scheme: dark;
   --blog-header-logo-invert: 1;
-  /* theme() 関数を削除し、直接Hexコードを指定 */
-  --primary-color: #d4d4d4;
-  --primary-color-rgb: 163, 163, 163;
-  --font-color-strong: #fafafa;
-  --color-900: #f5f5f5;
-  --color-800: #e5e5e5;
-  --color-700: #d4d4d4;
-  --color-600: #a3a3a3;
+
+  --color-primary-color: #D4D4D4;
+  --color-primary-color-rgb: 163, 163, 163;
+  --color-font-color-strong: #FAFAFA;
+  --color-bg-color-strong: #0A0A0A;
+  --color-sns-btn-color: #FFF;
+  --color-tint-strong: #333333;
+
+  --color-900: #F5F5F5;
+  --color-800: #E5E5E5;
+  --color-700: #D4D4D4;
+  --color-600: #A3A3A3;
   --color-500: #737373;
   --color-400: #525252;
   --color-300: #404040;
   --color-200: #262626;
   --color-100: #171717;
-  --bg-color-strong: #0a0a0a;
-  --sns-btn-color: #fff;
 }
 
 /* Sakura Theme */
-[data-theme="sakura"] {
+:root:has(#theme-selector [value=sakura]:checked) {
   color-scheme: light;
   --blog-header-logo-invert: 0;
-  /* theme() 関数を削除し、直接Hexコードを指定 */
-  --primary-color: #f472b6;
-  --primary-color-rgb: 244, 114, 182;
-  --font-color-strong: #500724;
+
+  --color-primary-color: #F472B6;
+  --color-primary-color-rgb: 244, 114, 182;
+  --color-font-color-strong: #500724;
+  --color-bg-color-strong: #FDF2F8;
+  --color-sns-btn-color: #2C353B;
+  --color-tint-strong: #FDF2F8;
+
   --color-900: #831843;
-  --color-800: #9d174d;
-  --color-700: #be185d;
-  --color-600: #db2777;
-  --color-500: #ec4899;
-  --color-400: #f472b6;
-  --color-300: #f9a8d4;
-  --color-200: #fbcfe8;
-  --color-100: #fce7f3;
-  --bg-color-strong: #fdf2f8;
-  --sns-btn-color: #2c353b;
-}
-
-/* 要調査 */
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --color-800: #9D174D;
+  --color-700: #BE185D;
+  --color-600: #DB2777;
+  --color-500: #EC4899;
+  --color-400: #F472B6;
+  --color-300: #F9A8D4;
+  --color-200: #FBCFE8;
+  --color-100: #FCE7F3;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+@utility container {
+  margin:0;
+  margin-inline: auto;
+  width: 100%;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+ @media (width >= theme(--breakpoint-sm)) {
+    max-width: theme(--breakpoint-sm); /* または '640px' のように直接記述 */
   }
-  a:hover {
-    color: #747bff;
+
+  @media (width >= theme(--breakpoint-md)) {
+    max-width: theme(--breakpoint-md); /* または '768px' のように直接記述 */
   }
-  button {
-    background-color: #f9f9f9;
+
+  @media (width >= theme(--breakpoint-lg)) {
+    max-width: theme(--breakpoint-lg); /* または '1024px' のように直接記述 */
   }
-} */
 
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  @media (width >= theme(--breakpoint-xl)) {
+    max-width: theme(--breakpoint-xl); /* または '1280px' のように直接記述 */
+  }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  @media (width >= theme(--breakpoint-2xl)) {
+    max-width: theme(--breakpoint-2xl); /* または '1536px' のように直接記述 */
+  }
 }
 
-@keyframes logo-spin {
-  from {
+@theme inline {
+  /* プロジェクト基底 color */
+  --color-base-900: var(--color-900);
+  --color-base-800: var(--color-800);
+  --color-base-700: var(--color-700);
+  --color-base-600: var(--color-600);
+  --color-base-500: var(--color-500);
+  --color-base-400: var(--color-400);
+  --color-base-300: var(--color-300);
+  --color-base-200: var(--color-200);
+  --color-base-100: var(--color-100);
+
+  /* PrimaryColor */
+  --color-primary-color: var(--color-primary-color);
+
+  /* secondary color */
+  --color-secondary-color: var(--color-secondary-color);
+
+  /* tertiary color */
+  --color-tertiary-color: var(--color-tertiary-color);
+
+  /* quaternary color */
+  --color-quaternary-color: var(--color-quaternary-color);
+
+  /* quinary color */
+  --color-quinary-color: var(--color-quinary-color);
+
+  /* senary color */
+  --color-senary-color: var(--color-senary-color);
+
+  /* septenary color */
+  --color-septenary-color: var(--color-septenary-color);
+
+  /* octonary color */
+  --color-octonary-color: var(--color-octonary-color);
+
+  /* nonary color */
+  --color-nonary-color: var(--color-nonary-color);
+
+  /* denary color */
+  --color-denary-color: var(--color-denary-color);
+
+  /* undenary color */
+  --color-undenary-color: var(--color-undenary-color);
+
+  /* duodenary color */
+  --color-duodenary-color: var(--color-duodenary-color);
+
+  /* tridenary color */
+  --color-tridenary-color: var(--color-tridenary-color);
+
+  /* フォント Varibles */
+  --color-font-color-strong: var(--color-font-color-strong);
+
+  /* Tailwindのデフォルトのカラーパレットを拡張したい場合 */
+  --color-my-custom-blue: #0000FF; /* 例えば新しいカスタムカラー */
+
+  --color-tint-strong: var(--color-tint-strong)
+}
+
+@keyframes animate-petal {
+  0% {
+    top: 0;
+    opacity: 0;
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: rotate(3000deg);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+@utility animate-petal-fall {
+  animation: animate-petal 25s linear infinite;
 }
 
-.card {
-  padding: 2em;
+@utility petal {
+  position: absolute;
+  /* background-color は `bg-sakura-petal` クラスで適用 */
+  border-radius: 150% 0 150% 0;
+  /* animation は animate-petal-fall クラスで適用 */
 }
 
-.read-the-docs {
-  color: #888;
+.petal::after {
+  content: "";
+  position: absolute;
+  top: -14%;
+  left: -10%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-sakura-petal); /* CSS変数で色を参照 */
+  border-radius: 150% 0 150% 0;
+  transform: rotate(15deg);
+}
+
+/* .sakura-petal のスタイルに color プロパティを追加
+.sakura-petal svg {
+  color: var(--color-sakura-petal);
+} */
+
+/* .sakura-petal のその他のスタイルはそのまま */
+/* .sakura-petal {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 16px;
+  height: 8px;
+  opacity: calc(.2 + var(--opacity-adjustment));
+  animation: calc(25s - var(--falling-speed-adjustment)) linear sakura-fall infinite,
+             calc(25s - var(--falling-speed-adjustment)) linear sakura-slide infinite,
+             calc(1s - var(--fliping-speed-adjustment)) linear sakura-flip_rotate infinite;
+  animation-delay: var(--spawn-delay);
 } */

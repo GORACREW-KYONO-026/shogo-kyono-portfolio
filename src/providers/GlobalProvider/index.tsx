@@ -22,4 +22,5 @@ export const GlobalProvider: FC<Readonly<PropsWithChildren>> = ({ children }) =>
   }, [saveMediaQuery]);
 
   return children;
+  // return <Theme>{children}</Theme>;
 };
